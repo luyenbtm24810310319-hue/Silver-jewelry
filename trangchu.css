@@ -1,0 +1,200 @@
+/* 1. RESET & CHUNG */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: hsl(0, 0%, 100%);
+    color: black;
+    line-height: 1.6;
+}
+
+/* 2. HEADER (Cố định phía trên) */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    background: rgba(78, 78, 78, 0.9); /* Làm đậm hơn một chút để nổi bật chữ */
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px;
+    display: block;
+}
+
+/* 3. MENU ĐIỀU HƯỚNG */
+.mucluc-list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.mucluc-list > li {
+    position: relative; /* Quan trọng để mega-menu căn theo li */
+    display: flex;
+    align-items: center;
+    height: 90px;
+}
+
+.mucluc-list > li > a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    transition: 0.3s;
+}
+
+.mucluc-list > li:hover > a {
+    color: #edbff7;
+}
+
+/* 4. MEGA MENU (Hiện khi hover) */
+.mega-menu {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa menu con so với mục chính */
+    width: 600px; /* Độ rộng menu con */
+    background: white;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-bottom: 3px solid #1a237e;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, 10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.mucluc-list > li:hover .mega-menu {
+    display: grid;
+}
+
+.mega-item {
+    text-align: center;
+    text-decoration: none;
+    color: #6b6b6b;
+    transition: 0.3s;
+}
+
+.mega-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* 5. NÚT ĐĂNG NHẬP */
+.btn-login {
+    border: 2px solid #edc1e7;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    
+    box-shadow: 0 0 15px rgb(249, 154, 237);
+}
+
+/* 6. BANNER */
+.banner {
+    width: 100%;
+    height: 550px;
+    margin-top: 90px; /* Tránh bị Header che */
+    background: url("anhbiatrangchu.jpg") center/cover no-repeat;
+}
+
+/* 7. NỘI DUNG CHÍNH */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.new-collection {
+    padding: 80px 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px; /* Độ rộng của ảnh trung tâm */
+    height: 400px;
+    filter: blur(2px); /* Các ảnh bên cạnh sẽ hơi mờ */
+    opacity: 0.5;      /* Và hơi trong suốt */
+    transition: 0.5s;
+}
+
+/* Khi ảnh nằm ở giữa (active) thì sẽ rõ nét và to lên */
+.swiper-slide-active {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1.1); /* Phóng to ảnh giữa */
+    z-index: 2;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Gạch kẻ ngang */
+.separator {
+    border: 0;
+    height: 1px;
+    background: #787676; /* Màu xám nhạt cho thanh mảnh */
+    margin: 0 auto;
+    width: 90%; /* Chiều dài của gạch kẻ ngang (80% chiều ngang trang) */
+}
+
+/* Phần Contact màu trắng */
+.contact {
+    background-color: #ffffff; /* Nền trắng */
+    color: #333333;           /* Chữ màu xám đậm hoặc đen để đọc được trên nền trắng */
+    padding: 60px 20px;       /* Khoảng cách đệm bên trong */
+    text-align: center;       /* Căn giữa chữ */
+    line-height: 1.8;         /* Chống chồng chữ như đã nói ở trên */
+    font-size: 20px;
+}
+
+.contact img {
+    height: 80px;
+    margin-bottom: 20px;
+    /* Nếu logo của bạn là màu trắng, trên nền trắng sẽ bị tàng hình. 
+       Bạn có thể thêm filter bên dưới để logo hiện rõ hơn (biến thành màu đen) */
+    filter: brightness(0); 
+}
+
+.contact p {
+    margin-bottom: 10px;
+}
