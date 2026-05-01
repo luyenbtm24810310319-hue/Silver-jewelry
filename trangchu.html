@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLT - Trang Sức Bạc</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="trangchu.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo trắng.jpg" alt="Logo">
+    </div>
+
+    <nav class="mucluc">
+        <ul class="mucluc-list">
+            <li><a href="#">GIỚI THIỆU</a></li>
+            <li>
+                <a href="#">SẢN PHẨM</a>
+                <div class="mega-menu">
+                    <a href="#" class="mega-item"><img src="nhan.jpg" alt="Nhẫn"><p>Nhẫn</p></a>
+                    <a href="#" class="mega-item"><img src="vong-tay.png" alt="Vòng tay"><p>Vòng tay</p></a>
+                    <a href="#" class="mega-item"><img src="vong-co.png" alt="Vòng cổ"><p>Vòng cổ</p></a>
+                </div>
+            </li>
+            <li>
+                <a href="#">DỊCH VỤ</a>
+                <div class="mega-menu">
+                    <a href="#" class="mega-item"><img src="chinhsachthudoi.jpg" alt="Thu đổi"><p>Chính sách thu đổi</p></a>
+                    <a href="#" class="mega-item"><img src="chinhsachbaohanh.jpg" alt="Bảo hành"><p>Chính sách bảo hành</p></a>
+                    <a href="#" class="mega-item"><img src="chinhsachgiaohang.jpg" alt="Giao hàng"><p>Chính sách giao hàng</p></a>
+                </div>
+            </li>
+            <li><a href="#">LIÊN HỆ</a></li>
+        </ul>
+    </nav>
+
+    <a href="#" class="btn-login"><b>ĐĂNG KÝ / ĐĂNG NHẬP</b></a>
+</header>
+
+<div class="banner"></div>
+
+<div class="container"></div>
+
+<section class="new-collection">
+    <h2 class="title" style="text-align: center; margin: 50px 0 30px 0; font-family: serif; font-size: 30px;">BỘ SƯU TẬP</h2>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="best1.jpg" alt="BST 1"></div>
+            <div class="swiper-slide"><img src="best2.jpg" alt="BST 2"></div>
+            <div class="swiper-slide"><img src="best3.jpg" alt="BST 3"></div>
+            <div class="swiper-slide"><img src="best4.jpg" alt="BST 4"></div>
+            <div class="swiper-slide"><img src="best5.jpg" alt="BST 5"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow", // Hiệu ứng coverflow
+    grabCursor: true,
+    centeredSlides: true, // Ảnh active luôn nằm giữa
+    slidesPerView: "auto", // Tự động tính số lượng ảnh hiển thị
+    loop: true, // Lặp lại vô tận
+    autoplay: false, 
+    watchSlidesProgress: true,
+    coverflowEffect: {
+        rotate: 30,    // Góc xoay của các ảnh hai bên
+        stretch: 0,    // Độ giãn giữa các ảnh
+        depth: 100,    // Độ sâu (ảnh bên cạnh đẩy về phía sau)
+        modifier: 1,
+        slideShadows: false, // Tắt bóng mặc định để nhìn sạch hơn
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    
+    
+    /*autoplay: {
+        delay: 3000, // Tự động chuyển sau 3 giây
+        disableOnInteraction: false,
+    },*/
+    
+});
+</script>
+
+<hr class="separator"> 
+
+<div class="contact">
+    <img src="logo trắng.jpg" alt="logo1">
+    <p><b>CÔNG TY TNHH TRANG SỨC BẠC LLT</b></p>
+    <p>Trụ sở chính: Số 12/81 Phạm Văn Đồng, Phường Nghĩa Đô, Thành phố Hà Nội, Việt Nam</p>
+    <p>Điện thoại: 1900 888 290 - Fax: 9836875 - Email: cskh@LLT.vn</p>
+    <p>Giấy chứng nhận doanh nghiệp: 0909265898 do Sở Kế Hoạch & Đầu tư TP.Hà Nội cấp lần đầu vào 1/1/2026</p>
+</div>
+
+</body>
+</html>
